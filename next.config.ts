@@ -2,11 +2,12 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
+  output: "export",
+  // Emit `/ruta/index.html` so Firebase Hosting serves each route without rewrites
+  trailingSlash: true,
   experimental: {
     agentFeedback: true,
   },
-  cacheComponents: true,
-  partialPrefetching: true,
   turbopack: {
     rules: {
       "*.css": {
